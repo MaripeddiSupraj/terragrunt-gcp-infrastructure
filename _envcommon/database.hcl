@@ -23,6 +23,7 @@ dependency "networking" {
 
 inputs = {
   project_id = dependency.project.outputs.project_id
+  region = local.region_vars.locals.gcp_region
   instance_name = "${local.env_vars.locals.environment}-postgres"
   database_version = "POSTGRES_15"
   tier = local.env_vars.locals.db_tier
