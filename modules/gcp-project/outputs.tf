@@ -1,11 +1,11 @@
 output "project_id" {
   description = "The project ID"
-  value       = google_project.project.project_id
+  value       = data.google_project.project.project_id
 }
 
 output "project_number" {
   description = "The project number"
-  value       = google_project.project.number
+  value       = data.google_project.project.number
 }
 
 output "terraform_service_account_email" {

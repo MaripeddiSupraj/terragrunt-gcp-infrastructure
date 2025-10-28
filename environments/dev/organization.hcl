@@ -1,6 +1,6 @@
 locals {
-  organization_id = "123456789012"
-  billing_account = "ABCDEF-123456-ABCDEF"
+  organization_id = ""
+  billing_account = ""
   state_bucket_prefix = "ecommerce-terraform-state"
   folder_id = "folders/123456789012"
   

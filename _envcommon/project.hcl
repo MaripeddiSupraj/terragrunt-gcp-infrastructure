@@ -4,15 +4,15 @@ locals {
 }
 
 terraform {
-  source = "${get_parent_terragrunt_dir()}/modules/gcp-project"
+  source = "../../../modules/gcp-project"
 }
 
 inputs = {
   project_id = local.env_vars.locals.project_id
   project_name = "E-commerce ${title(local.env_vars.locals.environment)}"
-  organization_id = local.org_vars.locals.organization_id
-  billing_account = local.org_vars.locals.billing_account
-  folder_id = local.org_vars.locals.folder_id
+  # organization_id = local.org_vars.locals.organization_id
+  # billing_account = local.org_vars.locals.billing_account
+  # folder_id = local.org_vars.locals.folder_id
   
   enable_apis = [
     "compute.googleapis.com",

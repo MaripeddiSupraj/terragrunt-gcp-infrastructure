@@ -3,7 +3,7 @@ locals {
 }
 
 terraform {
-  source = "${get_parent_terragrunt_dir()}/modules/cloud-sql"
+  source = "../../../modules/cloud-sql"
 }
 
 dependency "project" {

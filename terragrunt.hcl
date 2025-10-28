@@ -17,12 +17,8 @@ locals {
 }
 
 remote_state {
-  backend = "gcs"
-  config = {
-    bucket = "${local.org_vars.locals.state_bucket_prefix}-${local.org_vars.locals.organization_id}-${local.environment}"
-    prefix = "${path_relative_to_include()}/terraform.tfstate"
-    enable_bucket_policy_only = true
-  }
+  backend = "local"
+  config = {}
   generate = {
     path = "backend.tf"
     if_exists = "overwrite_terragrunt"

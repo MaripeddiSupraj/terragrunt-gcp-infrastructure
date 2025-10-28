@@ -4,7 +4,7 @@ locals {
 }
 
 terraform {
-  source = "${get_parent_terragrunt_dir()}/modules/gke-cluster"
+  source = "../../../modules/gke-cluster"
 }
 
 dependency "project" {

@@ -1,6 +1,6 @@
 locals {
   environment = "dev"
-  project_id = "ecommerce-dev-project"
+  project_id = "green-cell-474517-d5"
   cost_center = "development"
   compliance_level = "basic"
   

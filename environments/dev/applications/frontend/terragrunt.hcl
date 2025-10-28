@@ -3,7 +3,7 @@ include "root" {
 }
 
 terraform {
-  source = "${get_parent_terragrunt_dir()}/modules/gke-workload"
+  source = "../../../../modules/gke-workload"
 }
 
 dependency "gke" {

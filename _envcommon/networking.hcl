@@ -4,19 +4,13 @@ locals {
 }
 
 terraform {
-  source = "${get_parent_terragrunt_dir()}/modules/networking"
+  source = "../../../modules/networking"
 }
 
-dependency "project" {
-  config_path = "../project"
-  mock_outputs = {
-    project_id = "mock-project-id"
-  }
-  mock_outputs_allowed_terraform_commands = ["validate", "plan"]
-}
+# Using existing project directly
 
 inputs = {
-  project_id = dependency.project.outputs.project_id
+  project_id = "green-cell-474517-d5"
   vpc_name = "${local.env_vars.locals.environment}-vpc"
   vpc_cidr = local.region_vars.locals.vpc_cidr
   

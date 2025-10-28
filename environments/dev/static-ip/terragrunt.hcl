@@ -3,7 +3,7 @@ include "root" {
 }
 
 terraform {
-  source = "${get_parent_terragrunt_dir()}/modules/static-ip"
+  source = "../../../modules/static-ip"
 }
 
 dependency "project" {
