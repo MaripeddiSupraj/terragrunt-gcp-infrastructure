@@ -4,6 +4,19 @@ Production-ready Terragrunt setup for multi-environment GCP 3-tier applications.
 
 ## 🚀 Quick Start
 
+### 1. Setup GitHub Actions (Recommended)
+```bash
+# Follow the setup guide
+cat .github/SETUP_GUIDE.md
+
+# Create feature branch
+git checkout -b feature/your-feature
+
+# Make changes and create PR
+gh pr create --base develop
+```
+
+### 2. Manual Deployment (Testing)
 ```bash
 # Setup GCS backend
 ./scripts/setup-gcp-backend.sh your-project-id dev us-central1
@@ -38,7 +51,9 @@ Production-ready Terragrunt setup for multi-environment GCP 3-tier applications.
 - Terraform >= 1.0
 - Terragrunt >= 0.45
 - Google Cloud CLI
-- GitHub CLI (optional)
+- GitHub CLI
+- GCP Service Accounts with proper permissions
+- GitHub repository with Actions enabled
 
 ## 🔧 Configuration
 
@@ -49,4 +64,32 @@ Production-ready Terragrunt setup for multi-environment GCP 3-tier applications.
 
 ## 📖 Documentation
 
-See individual module README files for detailed configuration options.
+- [GitHub Actions Setup](.github/SETUP_GUIDE.md) - Complete CI/CD setup
+- [Branching Strategy](.github/BRANCH_STRATEGY.md) - Git workflow and deployment process
+- [Testing Guide](TESTING_GUIDE.md) - Validation and testing procedures
+- Individual module README files for detailed configuration options
+
+## 🔄 Workflow
+
+### Development Process
+1. **Feature Branch** → Create from `develop`
+2. **Pull Request** → Automated validation and security scan
+3. **Code Review** → Manual approval required
+4. **Merge to Develop** → Auto-deploy to dev environment
+5. **Staging Deployment** → Auto-deploy to staging
+6. **Production Release** → Merge to `main` with approval
+
+### Branch Strategy
+- `main` → Production deployments
+- `develop` → Development and staging deployments
+- `feature/*` → New features and changes
+- `hotfix/*` → Emergency production fixes
+
+## 🛡️ Security & Compliance
+
+- ✅ Automated security scanning with Checkov
+- ✅ Infrastructure drift detection
+- ✅ Cost estimation on PRs
+- ✅ Branch protection rules
+- ✅ Environment-specific approvals
+- ✅ Audit logging enabled
